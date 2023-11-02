@@ -4,7 +4,7 @@ path: frontend-materio/javascript-version/src/views/components/vo
 <template>
     <div style="margin: 0 -15px 0 -15px;">
         <v-card-title  v-if="editMode">
-            {{label}}
+            \{{label}}
         </v-card-title>
         <v-card-title  v-if="!editMode">
             Your Profile
@@ -74,7 +74,7 @@ path: frontend-materio/javascript-version/src/views/components/vo
                             >
                                 <v-list-item-content>
                                     <v-list-item-title class="text-h6" align="center">
-                                        {{value.name }}
+                                        \{{value.name }}
                                     </v-list-item-title>
                                 </v-list-item-content>
                             </v-list-item>
@@ -112,11 +112,11 @@ path: frontend-materio/javascript-version/src/views/components/vo
                                     
                                 </v-list-item-title>
                                 <v-list-item-subtitle style="font-weight:500;">
-                                    Id :  {{value.userId }}<br>
-                                    Password :  {{value.password }}<br>
-                                    Email :  {{value.email }}<br>
-                                    Address :  {{value.address }}<br>
-                                    Phone :  {{value.phone }}
+                                    Id :  \{{value.userId }}<br>
+                                    Password :  \{{value.password }}<br>
+                                    Email :  \{{value.email }}<br>
+                                    Address :  \{{value.address }}<br>
+                                    Phone :  \{{value.phone }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>

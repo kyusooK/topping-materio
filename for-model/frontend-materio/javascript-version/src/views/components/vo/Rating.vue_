@@ -4,7 +4,7 @@ path: frontend-materio/javascript-version/src/views/components/vo
 <template>
     <div style="margin: 0 -15px 0 -15px;">
         <v-card-title v-if="editMode">
-            {{label}}
+            \{{label}}
         </v-card-title>
         <v-card-text v-if="value">
             <div v-if="editMode" style="margin-top:-20px;">

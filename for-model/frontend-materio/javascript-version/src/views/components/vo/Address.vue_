@@ -4,7 +4,7 @@ path: frontend-materio/javascript-version/src/views/components/vo
 <template>
     <div style="margin: 0 -15px 0 -15px;">
         <v-card-title  v-if="inList">
-            {{address.country }} / {{address.state }} {{address.city }}  {{address.street }} ({{address.zipcode }})
+            \{{address.country }} / \{{address.state }} \{{address.city }} \{{address.street }} (\{{address.zipcode }})
         </v-card-title>
         <v-card-text v-if="inList">
             <div v-if="editMode" style="margin-top:-20px;">
@@ -24,7 +24,7 @@ path: frontend-materio/javascript-version/src/views/components/vo
             </div>
 
             <div v-if="!inList">
-                <p style="font-family:sans-serif; font-weight:bold; font-size:15px">{{address.country }} / {{address.state }} {{address.city }}  {{address.street }} ({{address.zipcode }})</p>
+                <p style="font-family:sans-serif; font-weight:bold; font-size:15px">\{{address.country }} / \{{address.state }} \{{address.city }} \{{address.street }} (\{{address.zipcode }})</p>
                 <v-divider></v-divider><br>
                 <GoogleMap
                     api-key="AIzaSyBupK0cTa2fQJA833My7W-BGLAYvQQEN1Q"
