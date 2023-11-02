@@ -1,7 +1,10 @@
+forEach: Model
+fileName: Boolean.vue
+path: frontend-materio/javascript-version/src/views/components/primitives
 <template>
     <div>
         <div v-if="editMode">
-            <div class="label-title">{{label}}</div>
+            <div class="label-title">\{{label}}</div>
             <v-text-field
                 v-bind="$attrs"
                 type="number"
@@ -11,7 +14,7 @@
             />
         </div>
         <div v-else>
-            {{value}}
+            \{{value}}
         </div>
     </div>
 </template>

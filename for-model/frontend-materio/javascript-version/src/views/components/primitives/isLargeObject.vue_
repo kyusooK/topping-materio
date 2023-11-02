@@ -1,3 +1,6 @@
+forEach: Model
+fileName: Boolean.vue
+path: frontend-materio/javascript-version/src/views/components/primitives
 <template>
     <div>
         <div v-if="editMode" style="margin-top:-20px;">
@@ -24,10 +27,10 @@
         <div v-else>
             <v-card v-if="isFile" outlined>
                 <v-img :src="value" />
-                <v-card-title> {{label}} </v-card-title>
+                <v-card-title> \{{label}} </v-card-title>
             </v-card>
             <div v-else>
-                {{label}} :  {{value}}
+                \{{label}} :  \{{value}}
             </div>
         </div>
     </div>
