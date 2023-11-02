@@ -1,16 +1,20 @@
+fileName: BasePicker.vue
+path: frontend-materio/javascript-version/src/views/components/base-ui
+---
 <template>
-<div>
-<v-combobox
-:items="filteredList"
-:item-text="nameField"
-:item-value="idField"
-:label="label"
-return-object
-v-model="selected"
-@change="select"
-solo
-></v-combobox>
-</div>
+    <div>
+        <v-combobox
+            :items="filteredList"
+            :item-text="nameField"
+            :item-value="idField"
+            :label="label"
+            return-object
+            v-model="selected"
+            @change="select"
+            solo
+        >
+        </v-combobox>
+    </div>
 </template>
 
 <script>
@@ -63,19 +67,20 @@ export default {
         }
     },
     watch:{
-    "selected": {
-        handler: _.debounce(async function (newVal) {
-            if(newVal){
-                var findNameField = this.nameField
-                for(var i = 0; i < this.list.length; i++){
-                    if(this.list[i][findNameField] == newVal){
-                    this.select(this.list[i])
+        "selected": {
+            handler: _.debounce(async function (newVal) {
+                if(newVal){
+                    var findNameField = this.nameField
+                    for(var i = 0; i < this.list.length; i++){
+                        if(this.list[i][findNameField] == newVal){
+                            this.select(this.list[i])
+                        }
+                    }
                 }
-            }
-        }
-    }, 500),
-    immediate: true 
-    },
+            }, 500
+        ),
+            immediate: true 
+        },
     // "searchKeyword": {
     //     deep: true,
     //     handler: _.debounce (async function(){
@@ -110,11 +115,11 @@ export default {
                 this.$emit('selected', null)
             }
         },
-},
+    },
 };
 </script>
 <style>
-.my-combobox div {
-min-height: 24px !important;
-}
+    .my-combobox div {
+        min-height: 24px !important;
+    }
 </style>

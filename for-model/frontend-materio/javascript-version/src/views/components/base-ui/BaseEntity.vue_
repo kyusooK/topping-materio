@@ -1,3 +1,6 @@
+fileName: BaseEntity.vue
+path: frontend-materio/javascript-version/src/views/components/base-ui
+---
 <template>
     <div></div>
 </template>
@@ -8,7 +11,7 @@
     import { ref } from 'vue';
 
 export default {
-    name: 'baseEntityUi',
+    name: 'BaseEntity',
     props: {
         offline: Boolean,
         modelValue: Object,
