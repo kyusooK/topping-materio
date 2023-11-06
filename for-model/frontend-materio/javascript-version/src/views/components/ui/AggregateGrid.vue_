@@ -149,13 +149,6 @@ path: frontend-materio/javascript-version/src/views/components/ui
     </v-col>
 </template>
 
-import BaseGrid from '../base-ui/BaseGrid.vue'
-import Company from './Company.vue';
-import Weather from '../vo/Weather.vue'
-
-
-// import UserProfile from '../../../layouts/components/UserProfile.vue'
-
 <script>
 import { ref } from 'vue';
 import { useTheme } from 'vuetify';
