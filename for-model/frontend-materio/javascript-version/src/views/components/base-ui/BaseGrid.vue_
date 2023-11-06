@@ -14,7 +14,7 @@ export default {
         flex: null,
         tick : true,
         openDialog : false,
-        selectedRow: {},
+        selectedRow: null,
         path: 'path',
         repository: null,
         menu: [],
