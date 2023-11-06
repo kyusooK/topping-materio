@@ -47,7 +47,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                       </thead>
                       <tbody>
                           <tr v-for="(val, idx) in value" :key="val" @click="changeSelectedRow(val)">
-                            <td class="font-semibold">#\{{ idx + 1 }}</td>
+                            <td class="font-semibold">\#{{ idx + 1 }}</td>
                             {{#aggregateRoot.fieldDescriptors}}
                             {{#unless isKey}}
                             {{#if (isNotId nameCamelCase)}}
