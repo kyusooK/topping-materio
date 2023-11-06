@@ -58,7 +58,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                             </td>
                             {{/checkVO}}
                             {{else}}
-                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">\{{val[nameCamelCase]}}</td>
+                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}" v-model="val.{{nameCamelCase}}"></td>
                             {{/if}}
                             {{/if}}
                             {{/unless}}
