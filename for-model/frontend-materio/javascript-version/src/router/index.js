@@ -11,7 +11,7 @@ const router = createRouter({
     {{#boundedContexts}}
     {{#aggregates}}
     {
-        path: '/{{nameCamelCase}}',
+        path: '/{{namePlural}}',
         name: '{{nameCamelCase}}',
         component: () => import('../views/components/ui/{{namePascalCase}}Grid.vue'),
     },
