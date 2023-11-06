@@ -17,7 +17,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                         {{#if (isPrimitive className)}}
                         {{#if (isStringType (getPrimitiveType className))}}
                         {{else}}
-                        <th>{{nameCamelCase}}<th>"
+                        <th>{{nameCamelCase}}<th>
                         {{/if}}
                         {{else}}
                         <th>{{namePascalCase}}</th>
@@ -30,12 +30,10 @@ path: frontend-materio/javascript-version/src/views/components/ui
                 <tbody>
                     <tr v-for="(detailVal, idx) in selectedRow.salesItem" :key="detailVal" >
                         <td class="font-semibold">\{{ idx + 1 }}</td>
-
                         {{#fieldDescriptors}}
                         {{#if (isNotId nameCamelCase)}}
                         {{#if (isPrimitive className)}}
                         {{#if (isStringType (getPrimitiveType className))}}
-
                         {{else}}
                         <td class="whitespace-nowrap">\{{detailVal.nameCamelCase}}</td>
                         {{/if}}
@@ -61,7 +59,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                         {{#if (isPrimitive className)}}
                         {{#if (isStringType (getPrimitiveType className))}}
                         {{else}}
-                        <th>{{nameCamelCase}}<th>"
+                        <th>{{nameCamelCase}}<th>
                         {{/if}}
                         {{else}}
                         <th>{{namePascalCase}}</th>
