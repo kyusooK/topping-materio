@@ -3,6 +3,16 @@ fileName: {{namePascalCase}}Grid.vue
 path: frontend-materio/javascript-version/src/views/components/ui
 ---
 <template>
+    <v-snackbar
+        v-model="snackbar.status"
+        :timeout="snackbar.timeout"
+        :color="snackbar.color"
+    >
+        {{ snackbar.text }}
+        <v-btn style="margin-left: 80px;" text @click="snackbar.status = false">
+            Close
+        </v-btn>
+    </v-snackbar>
     <v-col :cols="2">
       <DrawerContent/>
     </v-col>
