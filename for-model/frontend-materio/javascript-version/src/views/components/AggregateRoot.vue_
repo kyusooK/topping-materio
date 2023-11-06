@@ -55,17 +55,11 @@ path: frontend-materio/javascript-version/src/views/components
 <script>
 
 import BaseEntity from './base-ui/BaseEntity.vue'
-import String from './primitives/String.vue'
-import Number from './primitives/Number.vue'
-import Weather from './vo/Weather.vue'
 
 export default {
     name: '{{namePascalCase}}',
     mixins:[BaseEntity],
     components:{
-        String,
-        Number,
-        Weather
     },
     
     data: () => ({
