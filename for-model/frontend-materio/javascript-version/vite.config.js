@@ -13,7 +13,6 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-
     vuetify({
       styles: {
         configFile: 'src/styles/variables/_vuetify.scss',
@@ -35,7 +34,6 @@ export default defineConfig({
     }),
     DefineOptions(),
   ],
-  define: { 'process.env': {} },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -56,7 +54,7 @@ export default defineConfig({
     ],
   },
   server: {
-      host: '0.0.0.0',
-      port: 5173,
+    host: '0.0.0.0',
+    port: 5173,
   },
 })
