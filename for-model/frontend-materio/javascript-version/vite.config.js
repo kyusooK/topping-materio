@@ -9,13 +9,11 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import vuetify from 'vite-plugin-vuetify'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
 
-    // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
     vuetify({
       styles: {
         configFile: 'src/styles/variables/_vuetify.scss',
