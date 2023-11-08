@@ -84,7 +84,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                             </td>
                             {{/checkVO}}
                             {{else}}
-                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{#getNameCamelCase nameCamelCase}}</td>
+                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{#getNameCamelCase nameCamelCase}}{{/getNameCamelCase}}</td>
                             {{/if}}
                             {{/if}}
                             {{/unless}}
