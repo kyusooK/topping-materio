@@ -21,7 +21,7 @@ path: for-model/frontend-materio/javascript-version/src/layouts/components
         <VerticalNavLink
             :item="{
                 title: 'Home',
-                to: 'index',
+                to: '/',
                 icon: { icon: 'mdi-home-outline' }
             }"
         />

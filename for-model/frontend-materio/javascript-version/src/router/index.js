@@ -8,6 +8,11 @@ import routes from '~pages'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: () => import('../pages/Index.vue'),
+    },
     {{#boundedContexts}}
     {{#aggregates}}
     {
