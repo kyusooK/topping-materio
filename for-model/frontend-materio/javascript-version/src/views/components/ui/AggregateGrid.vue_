@@ -84,7 +84,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                             </td>
                             {{/checkVO}}
                             {{else}}
-                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{{{#getNameCamelCase nameCamelCase}}}}</td>
+                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{#getNameCamelCase nameCamelCase}}</td>
                             {{/if}}
                             {{/if}}
                             {{/unless}}
@@ -294,7 +294,7 @@ window.$HandleBars.registerHelper('attachedActorName', function (actorName, opti
 })
 window.$HandleBars.registerHelper('getNameCamelCase', function (nameCamelCase) {
     if(nameCamelCase){
-        return val.nameCamelCase
+        return '{{val.nameCamelCase}}'
     }
 })
 </function>
