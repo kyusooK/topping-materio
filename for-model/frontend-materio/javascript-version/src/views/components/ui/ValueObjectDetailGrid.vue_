@@ -17,7 +17,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                         {{#if (isPrimitive className)}}
                         {{#if (isStringType (getPrimitiveType className))}}
                         {{else}}
-                        <th>{{nameCamelCase}}<th>
+                        <th>{{nameCamelCase}}</th>
                         {{/if}}
                         {{else}}
                         <th>{{namePascalCase}}</th>
@@ -59,7 +59,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                         {{#if (isPrimitive className)}}
                         {{#if (isStringType (getPrimitiveType className))}}
                         {{else}}
-                        <th>{{nameCamelCase}}<th>
+                        <th>{{nameCamelCase}}</th>
                         {{/if}}
                         {{else}}
                         <th>{{namePascalCase}}</th>
@@ -77,7 +77,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                         {{#if (isStringType (getPrimitiveType className))}}
                         {{else}}
                         <td class="whitespace-nowrap">
-                            <{{getPrimitiveType className}} style="margin-left: -5px; width: 150px;" :editMode="editMode" v-model="addVal.{{nameCamelCase}}"
+                            <{{getPrimitiveType className}} style="margin-left: -5px; width: 150px;" :editMode="editMode" v-model="addVal.{{nameCamelCase}}"/>
                         </td>
                         {{/if}}
                         {{else}}
