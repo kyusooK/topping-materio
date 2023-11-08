@@ -3,7 +3,7 @@
     <!-- 👉 Footer: left content -->
     <span class="d-flex align-center">
       &copy;
-      {{ new Date().getFullYear() }}
+      \{{ new Date().getFullYear() }}
       Made With
       <VIcon
         icon="mdi-heart-outline"
