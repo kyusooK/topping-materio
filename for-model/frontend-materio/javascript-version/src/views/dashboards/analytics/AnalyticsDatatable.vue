@@ -1,3 +1,7 @@
+forEach: Model
+fileName: AnalyticsDatatable.vue
+path: for-model/frontend-materio/javascript-version/src/views/dashboards/analytics
+---
 <script setup>
 const data = [
   {
@@ -146,7 +150,7 @@ const usreList = data
             v-for="header in headers"
             :key="header"
           >
-            {{ header }}
+            \{{ header }}
           </th>
         </tr>
       </thead>
@@ -159,8 +163,8 @@ const usreList = data
 
           <td>
             <div class="d-flex flex-column">
-              <span class="d-block font-weight-semibold text--primary text-truncate">{{ row.fullName }}</span>
-              <small>{{ row.post }}</small>
+              <span class="d-block font-weight-semibold text--primary text-truncate">\{{ row.fullName }}</span>
+              <small>\{{ row.post }}</small>
             </div>
           </td>
 
@@ -174,7 +178,7 @@ const usreList = data
               :color="statusColor[status[row.status]]"
               class="font-weight-medium"
             >
-              {{ status[row.status] }}
+              \{{ status[row.status] }}
             </VChip>
           </td>
         </tr>
