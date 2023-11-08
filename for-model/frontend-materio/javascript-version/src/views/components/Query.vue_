@@ -2,7 +2,6 @@ forEach: View
 fileName: {{namePascalCase}}.vue
 path: frontend-materio/javascript-version/src/views/components
 except: {{#ifEquals dataProjection "query-for-aggregate"}}false{{else}}true{{/ifEquals}}
-
 ---
 <template>
     <v-card outlined style="border-radius: 0; margin-top: 10px; padding-bottom: 10px; background-color: #F4F5FA;"">
