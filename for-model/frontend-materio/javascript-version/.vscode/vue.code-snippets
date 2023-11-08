@@ -60,7 +60,7 @@ path: for-model/frontend-materio/javascript-version/.vscode
     "template interpolation": {
         "prefix": "cc",
         "body": [
-            "{{ ${1} }}"
+            "\{{ ${1} }}"
         ],
         "description": "We are just making writing template interpolation easier."
     }
