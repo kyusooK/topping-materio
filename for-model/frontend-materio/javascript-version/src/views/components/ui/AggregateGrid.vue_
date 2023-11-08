@@ -294,7 +294,8 @@ window.$HandleBars.registerHelper('attachedActorName', function (actorName, opti
 })
 window.$HandleBars.registerHelper('getNameCamelCase', function (nameCamelCase) {
     if(nameCamelCase){
-        return '{{val.nameCamelCase}}'
+        var tdVal = 'val.'+ nameCamelCase
+        return '\{{tdVal}}'
     }
 })
 </function>
