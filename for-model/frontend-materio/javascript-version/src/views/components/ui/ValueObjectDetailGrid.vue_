@@ -35,7 +35,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                         {{#if (isPrimitive className)}}
                         {{#if (isStringType (getPrimitiveType className))}}
                         {{else}}
-                        <td class="whitespace-nowrap">\{{detailVal.nameCamelCase}}</td>
+                        <td class="whitespace-nowrap">{{#getNameCamelCase nameCamelCase}}{{/getNameCamelCase}}</td>
                         {{/if}}
                         {{else}}
                         <td class="whitespace-nowrap">
@@ -162,6 +162,12 @@ export default {
             return true;
         } else {
             return false;
+        }
+    })
+    window.$HandleBars.registerHelper('getNameCamelCase', function (nameCamelCase) {
+        if(nameCamelCase){
+            var tdVal = '{{ val.' + nameCamelCase + ' }}'
+            return tdVal
         }
     })
 </function>
