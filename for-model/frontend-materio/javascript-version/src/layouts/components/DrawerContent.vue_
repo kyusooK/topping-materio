@@ -56,35 +56,35 @@ path: for-model/frontend-materio/javascript-version/src/layouts/components
 </template>
 
 <script setup>
-import logo from '@/assets/logo.svg?raw'
-import { VerticalNavLink, VerticalNavSectionTitle,} from '@layouts'
-import { ref } from 'vue';
-import { useTheme } from 'vuetify';
+    import logo from '@/assets/logo.svg?raw'
+    import { VerticalNavLink, VerticalNavSectionTitle,} from '@layouts'
+    import { ref } from 'vue';
+    import { useTheme } from 'vuetify';
 
-const vuetifyTheme = useTheme();
+    const vuetifyTheme = useTheme();
 
-const urlPath = null;
-const sideBar = true;
-const drawer = true;
-const open = ['Users'];
+    const urlPath = null;
+    const sideBar = true;
+    const drawer = true;
+    const open = ['Users'];
 
-{{#boundedContexts}}
-const {{nameCamelCase}} = [
-    {{#aggregates}}
-    { key: '{{namePlural}}', url: '/{{namePlural}}', name: '{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}'},
-    {{/aggregates}}
-]
-{{/boundedContexts}}
+    {{#boundedContexts}}
+    const {{nameCamelCase}} = [
+        {{#aggregates}}
+        { key: '{{namePlural}}', url: '/{{namePlural}}', name: '{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}'},
+        {{/aggregates}}
+    ]
+    {{/boundedContexts}}
 
 
-function changeUrl() {
-    const path = document.location.href.split("#/");
-    urlPath.value = path[1];
-}
+    function changeUrl() {
+        const path = document.location.href.split("#/");
+        urlPath.value = path[1];
+    }
 
-function goHome() {
-    urlPath.value = null;
-}
+    function goHome() {
+        urlPath.value = null;
+    }
 </script>
 <function>
 window.$HandleBars.registerHelper('ifNotNull', function (displayName, name) {
