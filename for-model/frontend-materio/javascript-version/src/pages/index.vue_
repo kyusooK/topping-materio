@@ -1,5 +1,5 @@
 forEach: Model
-fileName: DrawerContent.vue
+fileName: Index.vue
 path: for-model/frontend-materio/javascript-version/src/pages
 ---
 <template>
