@@ -123,8 +123,8 @@ path: frontend-materio/javascript-version/src/views/components
     })
 
     window.$HandleBars.registerHelper('isPrimitive', function (className) {
-        if(className == "String" || className == "Integer" || className == "Long" || className = "Double" || className = "Float"
-                || className = "Boolean" || className = "Date"){
+        if(className == "String" || className == "Integer" || className == "Long" || className == "Double" || className == "Float"
+                || className == "Boolean" || className == "Date"){
             return true;
         } else {
             return false;
