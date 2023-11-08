@@ -135,8 +135,8 @@ except: {{#ifEquals dataProjection "query-for-aggregate"}}false{{else}}true{{/if
     })
 
     window.$HandleBars.registerHelper('isPrimitive', function (className) {
-        if(className.includes("String") || className.includes("Integer") || className.includes("Long") || className.includes("Double") || className.includes("Float")
-                || className.includes("Boolean") || className.includes("Date")){
+        if(className == "String" || className == "Integer" || className == "Long" || className == "Double" || className == "Float"
+                || className == "Boolean" || className == "Date"){
             return true;
         } else {
             return false;
@@ -144,13 +144,13 @@ except: {{#ifEquals dataProjection "query-for-aggregate"}}false{{else}}true{{/if
     })
 
     window.$HandleBars.registerHelper('getPrimitiveType', function (className) {
-        if(className.includes("String")) {
+        if(className == "String") {
             return "String";
-        } else if(className.includes("Integer") || className.includes("Long") || className.includes("Double") || className.includes("Float") || className.includes("int")) {
+        } else if(className == "Integer" || className == "Long" || className == "Double" || className == "Float" || className == "int") {
             return "Number";
-        } else if(className.includes("Boolean")) {
+        } else if(className == "Boolean") {
             return "Boolean";
-        } else if(className.includes("Date")) {
+        } else if(className == "Date") {
             return "Date";
         }
     })
@@ -197,7 +197,7 @@ except: {{#ifEquals dataProjection "query-for-aggregate"}}false{{else}}true{{/if
             return false;
         } else if(className.endsWith("Date")) {
             return "(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)";
-        } else if(className.includes("List")) {
+        } else if(className == "List") {
             return "[]"
         } else {
             return "{}"
