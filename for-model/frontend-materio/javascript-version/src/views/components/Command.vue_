@@ -132,13 +132,13 @@ path: frontend-materio/javascript-version/src/views/components
     })
 
     window.$HandleBars.registerHelper('getPrimitiveType', function (className) {
-        if(className = "String") {
+        if(className == "String") {
             return "String";
-        } else if(className = "Integer" || className = "Long" || className = "Double" || className = "Float" || className = "int") {
+        } else if(className == "Integer" || className == "Long" || className == "Double" || className == "Float" || className == "int") {
             return "Number";
-        } else if(className = "Boolean") {
+        } else if(className == "Boolean") {
             return "Boolean";
-        } else if(className = "Date") {
+        } else if(className == "Date") {
             return "Date";
         }
     })
