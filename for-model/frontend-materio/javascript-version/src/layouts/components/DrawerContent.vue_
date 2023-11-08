@@ -51,6 +51,7 @@ path: for-model/frontend-materio/javascript-version/src/layouts/components
                     :to="item.url"
                 ></v-list-item>
             </v-list-group>
+            {{/boundedContexts}}
         </v-list>
     </ul>
 </template>
