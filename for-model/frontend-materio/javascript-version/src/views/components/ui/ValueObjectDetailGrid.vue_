@@ -95,15 +95,11 @@ path: frontend-materio/javascript-version/src/views/components/ui
 </template>
 <script>
 import BaseDetailGrid from '../base-ui/BaseDetailGrid.vue';
-import Number from '../primitives/Number.vue'
-import CompanyId from '../CompanyId.vue'
 
 export default {
     name: '{{namePascalCase}}',
     mixins: [BaseDetailGrid],
     components: {
-        Number,
-        CompanyId
     },
     props: {
         label: String,
