@@ -1,6 +1,3 @@
-fileName: BaseGrid.vue
-path: frontend-materio/javascript-version/src/views/components/base-ui
----
 <template>
 </template>
 

@@ -1,7 +1,3 @@
-forEach: Model
-fileName: Boolean.vue
-path: frontend-materio/javascript-version/src/views/components/primitives
----
 <template>
     <div>
         <div v-if="editMode" style="margin-top:5px;">

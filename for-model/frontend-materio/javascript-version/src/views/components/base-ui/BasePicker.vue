@@ -1,6 +1,3 @@
-fileName: BasePicker.vue
-path: frontend-materio/javascript-version/src/views/components/base-ui
----
 <template>
     <div>
         <v-combobox
