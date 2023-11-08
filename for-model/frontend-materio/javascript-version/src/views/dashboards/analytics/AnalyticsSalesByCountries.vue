@@ -1,3 +1,7 @@
+forEach: Model
+fileName: AnalyticsSalesByCountries.vue
+path: for-model/frontend-materio/javascript-version/src/views/dashboards/analytics
+---
 <script setup>
 const salesByCountries = [
   {
@@ -78,12 +82,12 @@ const salesByCountries = [
               :color="data.color"
               class="me-3"
             >
-              {{ data.abbr }}
+              \{{ data.abbr }}
             </VAvatar>
           </template>
 
           <VListItemTitle class="mb-1">
-            <span class="text-sm font-weight-semibold">{{ data.amount }}</span>
+            <span class="text-sm font-weight-semibold">\{{ data.amount }}</span>
             <VIcon
               size="22"
               :color="data.change.charAt(0) === '+' ? 'success' : 'error'"
@@ -92,18 +96,18 @@ const salesByCountries = [
               {{ data.change.charAt(0) === '+' ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
             </VIcon>
             <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'text-success' : 'text-error'}`">
-              {{ data.change.slice(1) }}
+              \{{ data.change.slice(1) }}
             </span>
           </VListItemTitle>
 
           <VListItemSubtitle class="text-xs">
-            {{ data.country }}
+            \{{ data.country }}
           </VListItemSubtitle>
 
           <template #append>
             <div>
               <h4 class="font-weight-semibold">
-                {{ data.sales }}
+                \{{ data.sales }}
               </h4>
               <span class="text-xs text-medium-emphasis">Sales</span>
             </div>
