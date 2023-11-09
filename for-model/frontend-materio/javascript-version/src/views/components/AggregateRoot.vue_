@@ -187,11 +187,19 @@ export default {
     })
 
     window.$HandleBars.registerHelper('getPrimitiveType', function (className, options) {
-        if(className.includes("String")) {
-            if(this.isLob) {
-                return "LargeObject";
+        if (className.includes("String")) {
+            this.seenStrings = this.seenStrings || {};
+
+            if (!this.seenStrings[className]) {
+                this.seenStrings[className] = true;
+                
+                if (this.isLob) {
+                    return "LargeObject";
+                } else {
+                    return "String";
+                }
             } else {
-                return "String";
+                return "";
             }
         } else if(className.includes("Integer") || className.includes("Long") || className.includes("Double") || className.includes("Float") || className.includes("int")) {
             if(this.isLob) {
