@@ -21,7 +21,6 @@ fileName: {{namePascalCase}}.vue
         {{/if}}
         {{/if}}
         {{/unless}}
-        {{/aggregateRoot.fieldDescriptors}}
         {{#if isList}}
         {{else}}
         {{#if (isNotId nameCamelCase)}}
