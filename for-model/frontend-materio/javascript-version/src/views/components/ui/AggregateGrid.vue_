@@ -1,6 +1,5 @@
 forEach: Aggregate
 fileName: {{namePascalCase}}Grid.vue
-path: frontend-materio/javascript-version/src/views/components/ui
 ---
 <template>
     <v-snackbar

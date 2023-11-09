@@ -1,6 +1,5 @@
 forEach: Aggregate
 fileName: {{namePascalCase}}.vue
-path: frontend-materio/javascript-version/src/views/components
 ---
 <template>
     <div>

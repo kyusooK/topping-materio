@@ -1,6 +1,5 @@
 forEach: Command
 fileName: {{pascalCase name}}.vue
-path: frontend-materio/javascript-version/src/views/components
 ---
 <template>
 

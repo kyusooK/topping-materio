@@ -1,6 +1,5 @@
 forEach: Enumeration
 fileName: {{pascalCase name}}.vue
-path: frontend-materio/javascript-version/src/views/components
 ---
 <template>
     <div style="margin: -10px -15px 0 -15px;">

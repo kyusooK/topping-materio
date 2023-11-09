@@ -1,6 +1,5 @@
 forEach: ValueObject
 fileName: {{namePascalCase}}DetailGrid.vue
-path: frontend-materio/javascript-version/src/views/components/ui
 ---
 <template>
     <div class="panel">

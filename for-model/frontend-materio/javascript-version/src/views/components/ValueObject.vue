@@ -1,6 +1,5 @@
 forEach: ValueObject
 fileName: {{namePascalCase}}.vue
-path: frontend-materio/javascript-version/src/views/components
 ---
 <template>
     {{#referenceClass}}

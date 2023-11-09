@@ -1,6 +1,5 @@
 forEach: View
 fileName: {{namePascalCase}}.vue
-path: frontend-materio/javascript-version/src/views/components
 except: {{#ifEquals dataProjection "query-for-aggregate"}}false{{else}}true{{/ifEquals}}
 ---
 <template>
