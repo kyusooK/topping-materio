@@ -1,3 +1,6 @@
+forEach: Model
+fileName: BaseSecurity.vue
+---
 <template>
     <div></div>
 </template>
