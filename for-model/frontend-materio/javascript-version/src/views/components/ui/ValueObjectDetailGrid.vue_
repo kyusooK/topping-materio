@@ -112,6 +112,18 @@ export default {
     name: '{{namePascalCase}}',
     mixins: [BaseDetailGrid],
     components: {
+        {{#fieldDescriptors}}
+        {{#if (isNotId nameCamelCase)}}
+        {{#if (isPrimitive className)}}
+        {{#if (isStringType (getPrimitiveType className))}}
+        {{else}}
+        {{getPrimitiveType className}},
+        {{/if}}
+        {{else}}
+        {{namePascalCase}},
+        {{/if}}
+        {{/if}}
+        {{/fieldDescriptors}}
     },
     props: {
         label: String,

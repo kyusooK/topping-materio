@@ -50,34 +50,62 @@ path: frontend-materio/javascript-version/src/views/components
 </template>
 
 <script>
-   
-    export default {
-        name: '{{namePascalCase}}Command',
-        components:{},
-        props: {},
-        data: () => ({
-            editMode: true,
-            value: {},
-        }),
-        created() {
+{{#fieldDescriptors}}
+{{#if (isPrimitive className)}}
+import {{getPrimitiveType className}} from './primitives/{{getPrimitiveType className}}.vue'
+{{else}}
+{{#checkVO className}}
+import {{className}} from './vo/{{className}}.vue'
+{{/checkVO}}
+{{#checkEntityMember className}}
+import {{className}} from './{{className}}.vue'
+{{/checkEntityMember}}
+{{#checkListOfEntityMember className}}
+{{/checkListOfEntityMember}}
+{{/if}}
+{{/fieldDescriptors}}
+export default {
+    name: '{{namePascalCase}}Command',
+    components:{
         {{#fieldDescriptors}}
-            this.value.{{nameCamelCase}} = {{#setDefaultValue className}}{{/setDefaultValue}};
+        {{#if (isPrimitive className)}}
+        {{getPrimitiveType className}},
+        {{else}}
+        {{#checkVO className}}
+        {{className}},
+        {{/checkVO}}
+        {{#checkEntityMember className}}
+        {{className}},
+        {{/checkEntityMember}}
+        {{#checkListOfEntityMember className}}
+        {{/checkListOfEntityMember}}
+        {{/if}}
         {{/fieldDescriptors}}
+    },
+    props: {},
+    data: () => ({
+        editMode: true,
+        value: {},
+    }),
+    created() {
+    {{#fieldDescriptors}}
+        this.value.{{nameCamelCase}} = {{#setDefaultValue className}}{{/setDefaultValue}};
+    {{/fieldDescriptors}}
+    },
+    watch: {
+    },
+    methods: {
+        {{nameCamelCase}}() {
+            this.$emit('{{nameCamelCase}}', this.value);
         },
-        watch: {
+        close() {
+            this.$emit('closeDialog');
         },
-        methods: {
-            {{nameCamelCase}}() {
-                this.$emit('{{nameCamelCase}}', this.value);
-            },
-            close() {
-                this.$emit('closeDialog');
-            },
-            change() {
-                this.$emit("update:modelValue", this.value);
-            },
-        }
+        change() {
+            this.$emit("update:modelValue", this.value);
+        },
     }
+}
 </script>
 
 

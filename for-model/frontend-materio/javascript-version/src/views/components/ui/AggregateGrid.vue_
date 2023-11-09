@@ -196,6 +196,28 @@ export default {
     name: '{{nameCamelCase}}Grid',
     mixins:[BaseGrid],
     components:{
+        {{namePascalCase}},
+        {{#aggregateRoot.fieldDescriptors}}
+        {{#unless isKey}}
+        {{#if (isNotId nameCamelCase)}}
+        {{#if isVO}}
+        {{#checkVO className}}
+        {{className}},
+        {{/checkVO}}
+        {{/if}}
+        {{/if}}
+        {{/unless}}
+        {{/aggregateRoot.fieldDescriptors}}
+        {{#outgoingRelations}}
+        {{#target}}
+        {{nameCamelCase}}Id,
+        {{/target}}
+        {{/outgoingRelations}}
+        {{#aggregateRoot.fieldDescriptors}}
+        {{#if isList}}
+        {{getEntityFromList className}}DetailGrid,
+        {{/if}}
+        {{/aggregateRoot.fieldDescriptors}}
     },
     data: () => ({
         path: '{{namePlural}}',

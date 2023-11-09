@@ -88,6 +88,34 @@ export default {
     name: '{{namePascalCase}}',
     mixins:[BaseEntity],
     components:{
+        {{#aggregateRoot.fieldDescriptors}}
+        {{#if (isNotId nameCamelCase)}}
+        {{#if (isPrimitive className)}}
+        {{getPrimitiveType className}},
+        {{else}}
+        {{/if}}
+        {{/if}}
+        {{/aggregateRoot.fieldDescriptors}}
+        {{#aggregateRoot.fieldDescriptors}}
+        {{#if isList}}
+        {{getEntityFromList className}}DetailGrid,
+        {{else}}
+        {{#if (isNotId nameCamelCase)}}
+        {{#if (isPrimitive className)}}
+        {{else}}
+        {{#checkVO className}}
+        {{className}},
+        {{/checkVO}}
+        {{#checkEntityMember className}}
+        {{#if (getPrimitiveType className)}}
+        {{getPrimitiveType className}},
+        {{else}}
+        {{/if}}
+        {{/checkEntityMember}}
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{/aggregateRoot.fieldDescriptors}}
     },
     
     data: () => ({
