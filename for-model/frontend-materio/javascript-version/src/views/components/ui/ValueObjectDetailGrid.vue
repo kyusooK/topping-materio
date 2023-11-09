@@ -99,7 +99,7 @@ import BaseDetailGrid from '../base-ui/BaseDetailGrid.vue';
 {{#if (isPrimitive className)}}
 {{#if (isStringType (getPrimitiveType className))}}
 {{else}}
-import {{getPrimitiveType className}} from '../vo/primitives/{{getPrimitiveType className}}.vue'
+import {{getPrimitiveType className}} from '../primitives/{{getPrimitiveType className}}.vue'
 {{/if}}
 {{else}}
 import {{namePascalCase}} from '../{{namePascalCase}}.vue'
