@@ -84,7 +84,7 @@ path: frontend-materio/javascript-version/src/views/components/ui
                             </td>
                             {{/checkVO}}
                             {{else}}
-                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{#getNameCamelCase nameCamelCase}}{{/getNameCamelCase}}</td>
+                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{#getTableData nameCamelCase}}{{/getTableData}}</td>
                             {{/if}}
                             {{/if}}
                             {{/unless}}
@@ -168,6 +168,29 @@ import { ref } from 'vue';
 import { useTheme } from 'vuetify';
 import DrawerContent from '../../../layouts/components/DrawerContent.vue';
 import BaseGrid from '../base-ui/BaseGrid.vue'
+
+{{#aggregateRoot.fieldDescriptors}}
+{{#unless isKey}}
+{{#if (isNotId nameCamelCase)}}
+{{#if isVO}}
+{{#checkVO className}}
+</td>
+import {{className}} from '../vo/{{className}}.vue'
+{{/checkVO}}
+{{/if}}
+{{/if}}
+{{/unless}}
+{{/aggregateRoot.fieldDescriptors}}
+{{#outgoingRelations}}
+{{#target}}
+import {{nameCamelCase}}Id from '../{{nameCamelCase}}Id.vue'
+{{/target}}
+{{/outgoingRelations}}
+{{#aggregateRoot.fieldDescriptors}}
+{{#if isList}}
+import {{#getEntityFromList className}}{{/getEntityFromList className}}DetailGrid from './{{#getEntityFromList className}}{{/getEntityFromList className}}.vue'
+{{/if}}
+{{/aggregateRoot.fieldDescriptors}}
 
 export default {
     name: '{{nameCamelCase}}Grid',
@@ -292,7 +315,7 @@ window.$HandleBars.registerHelper('attachedActorName', function (actorName, opti
         console.log(e)
     }
 })
-window.$HandleBars.registerHelper('getNameCamelCase', function (nameCamelCase) {
+window.$HandleBars.registerHelper('getTableData', function (nameCamelCase) {
     if(nameCamelCase){
         var tdVal = '{{ val.' + nameCamelCase + ' }}'
         return tdVal
