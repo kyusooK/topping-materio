@@ -11,7 +11,7 @@ fileName: Index.vue
         <v-toolbar-title>
           <span class="second-word font uppercase contrast-primary-text"
             style="font-weight:700;"
-          >{{ projectName }}
+          >\{{ projectName }}
           </span>
         </v-toolbar-title>
         <span v-if="urlPath!=null" 
@@ -24,7 +24,7 @@ fileName: Index.vue
         <v-spacer></v-spacer>
         <b style="margin-left:10px; font-size:10px;"
             class="contrast-primary-text"
-        >{{username}} 님</b>
+        >\{{username}} 님</b>
         <v-btn
             text
             class="contrast-primary-text"
@@ -63,10 +63,10 @@ fileName: Index.vue
                           @click="changeUrl()"
                           style="font-weight:500; font-size:20px; border:solid 2px; max-width:250px; overflow:hidden; margin-top: 10%;"
                       >
-                          {{ card.text }}
+                          \{{ card.text }}
                       </v-btn>
                   </template>
-                  <span>{{ card.text }}</span>
+                  <span>\{{ card.text }}</span>
                 </v-tooltip>
               </v-card-actions>
             </v-card>
