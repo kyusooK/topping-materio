@@ -12,14 +12,17 @@ fileName: {{namePascalCase}}.vue
         {{/if}}
         {{/aggregateRoot.fieldDescriptors}}
         {{#aggregateRoot.fieldDescriptors}}
+        {{#unless isKey}}
+        {{#if (isNotId nameCamelCase)}}
+        {{#if isVO}}
+        {{#checkVO className}}
+        <{{className}} offline label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}" v-model="value.{{nameCamelCase}}" :editMode="editMode" @change="change"/>
+        {{/checkVO}}
         {{#if isList}}
         {{else}}
         {{#if (isNotId nameCamelCase)}}
         {{#if (isPrimitive className)}}
         {{else}}
-        {{#checkVO className}}
-        <{{className}} offline label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}" v-model="value.{{nameCamelCase}}" :editMode="editMode" @change="change"/>
-        {{/checkVO}}
         {{#checkEntityMember className}}
         {{#if (getPrimitiveType className)}}
         <{{getPrimitiveType className}} offline label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}" v-model="value.{{nameCamelCase}}" :editMode="editMode" @change="change"/>
