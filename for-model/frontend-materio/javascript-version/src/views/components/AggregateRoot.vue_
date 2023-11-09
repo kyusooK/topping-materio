@@ -178,16 +178,9 @@ export default {
     })
 
     window.$HandleBars.registerHelper('isPrimitive', function (className) {
-        var duplicateVal = []
         if(className.includes("String") || className.includes("Integer") || className.includes("Long") || className.includes("Double") || className.includes("Float")
                 || className.includes("Boolean") || className.includes("Date")){
-            duplicateVal.push(className)
-            if(duplicateVal.includes("String") || duplicateVal.includes("Integer") || duplicateVal.includes("Long") || duplicateVal.includes("Double") || duplicateVal.includes("Float")
-                || duplicateVal.includes("Boolean") || duplicateVal.includes("Date")){
-                    return false;
-                }else{
-                    return true;
-                }
+            return true;
         } else {
             return false;
         }
