@@ -76,6 +76,7 @@ import {{className}} from './vo/{{className}}.vue'
 {{#if (getPrimitiveType className)}}
 import {{getPrimitiveType className}} from './primitives/{{getPrimitiveType className}}.vue'
 {{else}}
+import {{className}} from './{{className}}.vue'
 {{/if}}
 {{/checkEntityMember}}
 {{/if}}

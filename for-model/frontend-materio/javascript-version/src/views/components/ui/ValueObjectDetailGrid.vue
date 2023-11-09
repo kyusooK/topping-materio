@@ -81,7 +81,7 @@ fileName: {{namePascalCase}}DetailGrid.vue
                         {{/if}}
                         {{else}}
                         <td class="whitespace-nowrap">
-                            <{{namePascalCase}} v-model="detailVal.{{nameCamelCase}}" :editMode="editMode"/>
+                            <{{namePascalCase}} v-model="addVal.{{nameCamelCase}}" :editMode="editMode"/>
                         </td>
                         {{/if}}
                         {{/if}}
