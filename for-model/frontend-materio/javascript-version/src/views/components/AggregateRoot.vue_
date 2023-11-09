@@ -98,7 +98,6 @@ export default {
         {{/aggregateRoot.fieldDescriptors}}
         {{#aggregateRoot.fieldDescriptors}}
         {{#if isList}}
-        {{getEntityFromList className}}DetailGrid,
         {{else}}
         {{#if (isNotId nameCamelCase)}}
         {{#if (isPrimitive className)}}
@@ -110,10 +109,16 @@ export default {
         {{#if (getPrimitiveType className)}}
         {{getPrimitiveType className}},
         {{else}}
+        {{className}},
         {{/if}}
         {{/checkEntityMember}}
         {{/if}}
         {{/if}}
+        {{/if}}
+        {{/aggregateRoot.fieldDescriptors}}
+        {{#aggregateRoot.fieldDescriptors}}
+        {{#if isList}}
+        {{getEntityFromList className}}DetailGrid,
         {{/if}}
         {{/aggregateRoot.fieldDescriptors}}
     },
