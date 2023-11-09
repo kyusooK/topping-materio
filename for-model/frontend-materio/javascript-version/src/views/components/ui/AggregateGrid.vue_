@@ -188,7 +188,7 @@ import {{nameCamelCase}}Id from '../{{nameCamelCase}}Id.vue'
 {{/outgoingRelations}}
 {{#aggregateRoot.fieldDescriptors}}
 {{#if isList}}
-import {{#getEntityFromList className}}{{/getEntityFromList className}}DetailGrid from './{{#getEntityFromList className}}{{/getEntityFromList className}}.vue'
+import {{getEntityFromList className}}DetailGrid from './{{getEntityFromList className}}.vue'
 {{/if}}
 {{/aggregateRoot.fieldDescriptors}}
 
