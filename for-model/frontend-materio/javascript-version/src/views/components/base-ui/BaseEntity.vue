@@ -3,9 +3,9 @@
 </template>
 
 <script>
-    import axios from 'axios'
-    import BaseRepository from '../repository/BaseRepository'
-    import { ref } from 'vue';
+import axios from 'axios'
+import BaseRepository from '../repository/BaseRepository'
+import { ref } from 'vue';
 
 export default {
     name: 'BaseEntity',
