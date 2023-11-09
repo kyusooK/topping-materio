@@ -1,5 +1,4 @@
 fileName: EventViewer.vue
-path: frontend-materio/javascript-version/src/views/components/vo
 ---
 <template>
     <v-expansion-panels>

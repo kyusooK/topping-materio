@@ -1,5 +1,4 @@
 fileName: Photo.vue
-path: frontend-materio/javascript-version/src/views/components/vo
 ---
 <template>
     <div style="margin: 0 -15px 0 -15px;">

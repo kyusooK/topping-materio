@@ -1,5 +1,4 @@
 fileName: Weather.vue
-path: frontend-materio/javascript-version/src/views/components/vo
 ---
 <template>
     <div style="margin: -7px -15px 0 -15px;" :style="editMode ? '':'width: 210px;'">
