@@ -18,6 +18,9 @@ fileName: {{namePascalCase}}.vue
         {{#checkVO className}}
         <{{className}} offline label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}" v-model="value.{{nameCamelCase}}" :editMode="editMode" @change="change"/>
         {{/checkVO}}
+        {{/if}}
+        {{/if}}
+        {{/unless}}
         {{/aggregateRoot.fieldDescriptors}}
         {{#if isList}}
         {{else}}
