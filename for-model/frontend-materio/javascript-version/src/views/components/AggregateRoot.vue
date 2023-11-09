@@ -156,6 +156,12 @@ export default {
 	        return name;
         }
     })
+    window.$HandleBars.registerHelper('checkVO', function (className, options) {
+        if(className.endsWith("Address") || className.endsWith("Photo") || className.endsWith("User") || className.endsWith("Email") 
+                || className.endsWith("Payment") || className.endsWith("Money") || className.endsWith("Weather") || className.endsWith("Rating") ){
+            return options.fn(this);
+        }
+    })
     window.$HandleBars.registerHelper('checkCommandPut', function (info, options) {
         if(info.endsWith('PUT')){
             return options.fn(this);
