@@ -1,8 +1,10 @@
 forEach: Model
 fileName: Index.vue
-path: for-model/frontend-materio/javascript-version/src/pages
 ---
 <template>
+  <v-col :cols="2">
+    <DrawerContent/>
+  </v-col>
   <v-app id="inspire">
         <v-col cols="10" style="margin: 0px; padding: 0px;">
             <v-main>
@@ -50,9 +52,13 @@ path: for-model/frontend-materio/javascript-version/src/pages
 
 <script>
 import { ref, onMounted, computed } from 'vue';
+import DrawerContent from '../layouts/components/DrawerContent.vue'
 
 export default {
   name: 'App',
+  components:{
+    DrawerContent
+  },
   data: () => ({
     useComponent: "",
     drawer: true,

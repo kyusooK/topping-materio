@@ -50,7 +50,7 @@ fileName: DrawerContent.vue
 import { useTheme } from 'vuetify';
 
 export default {
-    name:'DreawerContent',
+    name:'DrawerContent',
     components:{
     },
     data: () => ({
