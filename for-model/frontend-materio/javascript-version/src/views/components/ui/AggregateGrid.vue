@@ -72,39 +72,39 @@ fileName: {{namePascalCase}}Grid.vue
                         </thead>
                         <tbody>
                             <tr v-for="(val, idx) in value" :key="val" @click="changeSelectedRow(val)" :style="val === selectedRow ? 'background-color: #f0f3ff;':''">
-                            <td class="font-semibold">\{{ idx + 1 }}</td>
-                            {{#aggregateRoot.fieldDescriptors}}
-                            {{#unless isKey}}
-                            {{#if (isNotId nameCamelCase)}}
-                            {{#if isVO}}
-                            {{#checkVO className}}
-                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">
-                                <{{className}} :editMode="false" :inList="true" v-model="val.{{nameCamelCase}}"></{{className}}>
-                            </td>
-                            {{/checkVO}}
-                            {{else}}
-                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{#getTableData nameCamelCase}}{{/getTableData}}</td>
-                            {{/if}}
-                            {{/if}}
-                            {{/unless}}
-                            {{/aggregateRoot.fieldDescriptors}}
-                            {{#outgoingRelations}}
-                            {{#target}}
-                            <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">
-                                <{{namePascalCase}}Id :editMode="editMode" v-model="val.{{nameCamelCase}}Id"></{{namePascalCase}}Id>
-                            </td>
-                            {{/target}}
-                            {{/outgoingRelations}}
-                            {{#aggregateRoot.fieldDescriptors}}
-                            {{#if isList}}
-                            <{{getEntityFromList className}}DetailGrid label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}" offline v-if="selectedRow" v-model="selectedRow.{{nameCamelCase}}" :selectedRow="selectedRow"/>
-                            {{/if}}
-                            {{/aggregateRoot.fieldDescriptors}}
-                            <Icon style="margin-top: 15px;" icon="mi:delete" @click="deleteRow(val)" />
+                                <td class="font-semibold">\{{ idx + 1 }}</td>
+                                {{#aggregateRoot.fieldDescriptors}}
+                                {{#unless isKey}}
+                                {{#if (isNotId nameCamelCase)}}
+                                {{#if isVO}}
+                                {{#checkVO className}}
+                                <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">
+                                    <{{className}} :editMode="false" :inList="true" v-model="val.{{nameCamelCase}}"></{{className}}>
+                                </td>
+                                {{/checkVO}}
+                                {{else}}
+                                <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">{{#getTableData nameCamelCase}}{{/getTableData}}</td>
+                                {{/if}}
+                                {{/if}}
+                                {{/unless}}
+                                {{/aggregateRoot.fieldDescriptors}}
+                                {{#outgoingRelations}}
+                                {{#target}}
+                                <td class="whitespace-nowrap" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}">
+                                    <{{namePascalCase}}Id :editMode="editMode" v-model="val.{{nameCamelCase}}Id"></{{namePascalCase}}Id>
+                                </td>
+                                {{/target}}
+                                {{/outgoingRelations}}
+                                <Icon style="margin-top: 15px;" icon="mi:delete" @click="deleteRow(val)" />
                             </tr>
                         </tbody>
                     </v-table>
                 </div>
+                {{#aggregateRoot.fieldDescriptors}}
+                {{#if isList}}
+                <{{getEntityFromList className}}DetailGrid style="margin-top: 20px;" label="{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}" offline v-if="selectedRow" v-model="selectedRow.{{nameCamelCase}}" :selectedRow="selectedRow"/>
+                {{/if}}
+                {{/aggregateRoot.fieldDescriptors}}
             </div>
             <v-col>
                 <v-dialog
