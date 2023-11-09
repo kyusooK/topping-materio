@@ -174,7 +174,6 @@ import BaseGrid from '../base-ui/BaseGrid.vue'
 {{#if (isNotId nameCamelCase)}}
 {{#if isVO}}
 {{#checkVO className}}
-</td>
 import {{className}} from '../vo/{{className}}.vue'
 {{/checkVO}}
 {{/if}}
@@ -188,7 +187,7 @@ import {{nameCamelCase}}Id from '../{{nameCamelCase}}Id.vue'
 {{/outgoingRelations}}
 {{#aggregateRoot.fieldDescriptors}}
 {{#if isList}}
-import {{getEntityFromList className}}DetailGrid from './{{getEntityFromList className}}.vue'
+import {{getEntityFromList className}}DetailGrid from './{{getEntityFromList className}}DetailGrid.vue'
 {{/if}}
 {{/aggregateRoot.fieldDescriptors}}
 
