@@ -55,6 +55,40 @@ path: frontend-materio/javascript-version/src/views/components
 <script>
 
 import BaseEntity from './base-ui/BaseEntity.vue'
+{{#aggregateRoot.fieldDescriptors}}
+{{#if (isNotId nameCamelCase)}}
+{{#if (isPrimitive className)}}
+import {{getPrimitiveType className}} from './primitives/{{getPrimitiveType className}}.vue;
+{{else}}
+{{/if}}
+{{/if}}
+{{/aggregateRoot.fieldDescriptors}}
+{{#aggregateRoot.fieldDescriptors}}
+{{#if isList}}
+import {{getEntityFromList className}}DetailGrid from './ui/{{getEntityFromList className}}DetailGrid.vue'
+{{else}}
+{{#if (isNotId nameCamelCase)}}
+{{#if (isPrimitive className)}}
+{{else}}
+{{#checkVO className}}
+import {{className}} from './vo/{{className}}.vue'
+{{/checkVO}}
+{{#checkEntityMember className}}
+{{#if (getPrimitiveType className)}}
+import {{getPrimitiveType className}} from './primitives/{{getPrimitiveType className}}.vue'
+{{else}}
+import {{className}} from './vo/{{className}}.vue'
+{{/if}}
+{{/checkEntityMember}}
+{{/if}}
+{{/if}}
+{{/if}}
+{{/aggregateRoot.fieldDescriptors}}
+{{#aggregateRoot.fieldDescriptors}}
+{{#if isList}}
+import {{getEntityFromList className}}DetailGrid from './ui/{{getEntityFromList className}}DetailGrid.vue'
+{{/if}}
+{{/aggregateRoot.fieldDescriptors}}
 
 export default {
     name: '{{namePascalCase}}',
