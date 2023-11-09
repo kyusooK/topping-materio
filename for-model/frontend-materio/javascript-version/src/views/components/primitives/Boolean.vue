@@ -1,3 +1,6 @@
+forEach: Model
+fileName: Boolean.vue
+---
 <template>
     <div>
         <div v-if="editMode" style="margin-top:5px;">

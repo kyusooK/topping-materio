@@ -1,6 +1,5 @@
 forEach: Model
 fileName: Number.vue
-path: frontend-materio/javascript-version/src/views/components/primitives
 ---
 <template>
     <div>
