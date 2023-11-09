@@ -94,7 +94,7 @@ export default {
                 }
 
             } catch(e) {
-                console.log(e)
+                this.error(e)
             }
         },
         async deleteRow(selectedRow) {
@@ -108,7 +108,7 @@ export default {
                 this.$emit('update:modelValue', this.value);
                 this.$emit('delete', this.value);
             } catch(e) {
-                console.log(e)
+                this.error(e)
             }
         },
         change() {
