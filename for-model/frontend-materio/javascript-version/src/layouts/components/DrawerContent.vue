@@ -1,15 +1,12 @@
 forEach: Model
 fileName: DrawerContent.vue
-path: for-model/frontend-materio/javascript-version/src/layouts/components
 ---
-
 <template>
     <div class="nav-header">
         <RouterLink
         to="/"
         class="app-logo d-flex align-center gap-x-3 app-title-wrapper"
         >
-        <div v-html="logo"></div>
             <Transition name="vertical-nav-app-title">
                 <h1 class="font-weight-semibold leading-normal text-xl text-uppercase">
                 Materio
@@ -18,13 +15,6 @@ path: for-model/frontend-materio/javascript-version/src/layouts/components
         </RouterLink>
     </div>
     <ul>
-        <VerticalNavLink
-            :item="{
-                title: 'Home',
-                to: '/',
-                icon: { icon: 'mdi-home-outline' }
-            }"
-        />
         <v-list :opened="open" style="background-color: #F4F5FA;">
             <template v-slot:activator="{ props }">
                 <v-list-item
@@ -56,36 +46,40 @@ path: for-model/frontend-materio/javascript-version/src/layouts/components
     </ul>
 </template>
 
-<script setup>
-    import logo from '@/assets/logo.svg?raw'
-    import { VerticalNavLink, VerticalNavSectionTitle,} from '@layouts'
-    import { ref } from 'vue';
-    import { useTheme } from 'vuetify';
+<script>
+import { useTheme } from 'vuetify';
 
-    const vuetifyTheme = useTheme();
-
-    const urlPath = null;
-    const sideBar = true;
-    const drawer = true;
-    const open = ['Users'];
-
-    {{#boundedContexts}}
-    const {{nameCamelCase}} = [
-        {{#aggregates}}
-        { key: '{{namePlural}}', url: '/{{namePlural}}', name: '{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}'},
-        {{/aggregates}}
-    ]
-    {{/boundedContexts}}
-
-
-    function changeUrl() {
-        const path = document.location.href.split("#/");
-        urlPath.value = path[1];
-    }
-
-    function goHome() {
-        urlPath.value = null;
-    }
+export default {
+    name:'DreawerContent',
+    components:{
+    },
+    data: () => ({
+        drawer: true,
+        sideBar: true,
+        urlPath: null,
+        open: ['Users'],
+        {{#boundedContexts}}
+        {{nameCamelCase}}: [
+            {{#aggregates}}
+            { key: '{{namePlural}}', url: '/{{namePlural}}', name: '{{#ifNotNull displayName namePascalCase}}{{/ifNotNull}}'},
+            {{/aggregates}}
+        ],
+        {{/boundedContexts}}
+    }),
+    created(){
+    },
+    computed:{
+    },
+    methods: {
+        changeUrl(){
+            const path = document.location.href.split("#/");
+            urlPath.value = path[1];
+        },
+        goHome(){
+            urlPath.value = null;
+        }
+    },
+}
 </script>
 <function>
 window.$HandleBars.registerHelper('ifNotNull', function (displayName, name) {
