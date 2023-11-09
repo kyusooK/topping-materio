@@ -58,7 +58,7 @@ import BaseEntity from './base-ui/BaseEntity.vue'
 {{#aggregateRoot.fieldDescriptors}}
 {{#if (isNotId nameCamelCase)}}
 {{#if (isPrimitive className)}}
-import {{getPrimitiveType className}} from './primitives/{{getPrimitiveType className}}.vue;
+import {{getPrimitiveType className}} from './primitives/{{getPrimitiveType className}}.vue'
 {{else}}
 {{/if}}
 {{/if}}
